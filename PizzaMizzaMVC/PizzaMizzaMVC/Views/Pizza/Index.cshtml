@@ -1,0 +1,26 @@
+﻿@model List<PizzaMizzaMVC.Model.Pizza>
+
+<h2>Menu</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Adı</th>
+            <th>Qiymət</th>
+            <th>Əməliyyatlar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pizza in Model)
+        {
+            <tr>
+                <td>@pizza.Name</td>
+                <td>@pizza.Price ₼</td>
+                <td>
+                    <a href="/Pizza/Details/@pizza.Id">İnqredientlər</a> |
+                    <a href="/Pizza/Delete/@pizza.Id" onclick="return confirm('Silmək istədiyinizə əminsiniz?')">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
